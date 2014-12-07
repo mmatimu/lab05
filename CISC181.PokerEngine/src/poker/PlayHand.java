@@ -3,11 +3,21 @@ package poker;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.hibernate.HibernateException; 
+import org.hibernate.Session; 
+import org.hibernate.Transaction;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import util.HibernateUtil;
+
 public class PlayHand {
 
 	public static void main(String[] args) {
 
-
+		Session session = HibernateUtil.getSessionFactory().openSession();
+ 
+		session.beginTransaction();
 
 		for (int gCount = 0; gCount <= 2000000; gCount++) {
 			ArrayList<Hand> Hands = new ArrayList<Hand>();
@@ -20,6 +30,8 @@ public class PlayHand {
 			}
 			Collections.sort(Hands, Hand.HandRank);
 
+			session.save(Hands.get(0));
+			
 			System.out
 					.print("Hand Strength: " + Hands.get(0).getHandStrength());
 			System.out.print(" Hi Hand: " + Hands.get(0).getHighPairStrength());
@@ -37,6 +49,8 @@ public class PlayHand {
 			System.out.print("\n");
 
 		}
+		
+		session.getTransaction().commit();
 
 	}
 

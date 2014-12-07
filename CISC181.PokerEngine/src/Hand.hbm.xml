@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+          <hibernate-mapping>
+	          <class name="poker.Hand" table="HAND">
+	          	<id name="HandId">
+	          		<generator class="increment"></generator>
+	          	</id>
+	          	<property name="HandStrength" type="int">
+					<column name="HANDSTRENGTH" precision="5" scale="0" not-null="true" />
+	          	</property>
+	          	<property name="HiHand" type="int">
+					<column name="HIGHPAIR" precision="5" scale="0" not-null="true" />
+	          	    
+	          	</property>
+	          	<property name="LoHand" type="int">
+					<column name="LOWPAIR" precision="5" scale="0" not-null="true" />
+	          	    
+	          	</property>
+	          	<property name="Kicker" type="int">
+					<column name="KICKER" precision="5" scale="0" not-null="true" />
+	          	</property>
+	          </class>
+	          
+          </hibernate-mapping>
