@@ -4,8 +4,8 @@
           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
           <hibernate-mapping>
-	          <class name="poker.Hand" table="HAND">
-	          	<id name="HandId">
+	          <class name="poker.PokerResults" table="POKERRESULTS">
+	          	<id name="ResultId">
 	          		<generator class="increment"></generator>
 	          	</id>
 	          	<property name="HandStrength" type="int">
