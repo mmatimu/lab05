@@ -7,7 +7,7 @@
 	<session-factory>
 	    <property name="hbm2ddl.auto">update</property>
 			<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-			<property name="hibernate.default_schema">CISC181</property>
+			<property name="hibernate.default_schema">mMatimu</property>
 			<property name="hibernate.connection.username">mMatimu</property>
 			<property name="hibernate.connection.password">mMatimu</property>
 			<property name="hibernate.connection.url">jdbc:oracle:thin:@cisc181.canrkwijj6g6.us-east-1.rds.amazonaws.com:1521:ORCL</property>
